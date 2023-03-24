@@ -33,6 +33,7 @@ The focus of this exercise is to gauge approach to solving the problem as much a
 
 ### Technologies used
 - Create-react-app w/ TS template
+- Eslint
 - Chakra UI
 - React Router
 - React Query
@@ -40,8 +41,8 @@ The focus of this exercise is to gauge approach to solving the problem as much a
 - Cypress
 
 ### Steps
-- [ ] Hook to Swapi API
-- [ ] Show list of characters
+- [x] Hook to Swapi API
+- [x] Show list of characters
 - [ ] Character's list should contain the character's *name*, *gender* and *home planet*
 - [ ] Click on one character should navigate to a detailed view with the following info: *name, hair colour, eye colour, gender, home planet* and *list of films*
 - [ ] Amend height and gender
