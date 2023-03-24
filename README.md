@@ -43,8 +43,8 @@ The focus of this exercise is to gauge approach to solving the problem as much a
 ### Steps
 - [x] Hook to Swapi API
 - [x] Show list of characters
-- [ ] Character's list should contain the character's *name*, *gender* and *home planet*
-- [ ] Click on one character should navigate to a detailed view with the following info: *name, hair colour, eye colour, gender, home planet* and *list of films*
-- [ ] Amend height and gender
+- [x] Character's list should contain the character's *name*, *gender* and *home planet*
+- [x] Click on one character should navigate to a detailed view with the following info: *name, hair colour, eye colour, gender, height, home planet* and *list of films*
+- [x] Amend height and gender
 - [ ] Check styling
 - [ ] Check testing

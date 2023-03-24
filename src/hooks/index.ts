@@ -1,1 +1,2 @@
-export * from './useGetHomePlanet';
+export * from './useGetHomePlanetName';
+export * from './useGetFilm';

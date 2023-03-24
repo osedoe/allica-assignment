@@ -1,7 +1,14 @@
 {
     "editor.codeActionsOnSave": {
-        
+
         "source.fixAll.eslint": true
     },
-    "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"]
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact"
+    ],
+    // "eslint.run": "onSave",
+    "typescript.enablePromptUseWorkspaceTsdk": true
 }

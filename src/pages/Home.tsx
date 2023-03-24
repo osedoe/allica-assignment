@@ -1,11 +1,11 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { VStack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 import { getAllCharacters, type GetAllCharactersResponse } from '../api';
 import { Layout, ListItem, ListSkeleton } from '../components';
 import { type CharacterModel, type QueryError } from '../interfaces';
-import { ErrorMessage } from '../components/error';
 
 export const Home = () => {
   const { data: charactersList, isLoading, error } = useQuery<GetAllCharactersResponse, QueryError>({ queryKey: ['characters'], queryFn: getAllCharacters });
@@ -14,14 +14,17 @@ export const Home = () => {
     return <ListSkeleton />;
   }
 
-  if (error != null) {
-    return <ErrorMessage />;
-  }
-
   return (
-    <Layout>
+    <Layout error={error}>
       <VStack align='stretch'>
-        {charactersList?.results.map((character: CharacterModel) => <ListItem key={character.name} character={character} />)}
+        {charactersList?.results.map((character: CharacterModel, index: number) => {
+          const characterPosition = index + 1;
+          const route = `character-details/${characterPosition}`;
+          return (
+            <Link key={character.name} to={route}>
+              <ListItem character={character} />
+            </Link>);
+        })}
       </VStack>
     </Layout>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Skeleton, SkeletonText, VStack } from '@chakra-ui/react';
-import { Layout } from '../Layout';
+import { Layout } from '../layout/Layout';
 
 export const ListSkeleton = () => {
   return (
