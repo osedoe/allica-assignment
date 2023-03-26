@@ -16,13 +16,25 @@ const toQueryObject = (url: string): QueryObject => {
   };
 };
 
-export const useGetFilms = (urls: string[] = []): string[] => {
+interface UseGetFilms {
+  isLoading: boolean
+  error: boolean
+  names?: string[]
+}
+
+export const useGetFilms = (urls: string[] = []): UseGetFilms => {
   const queries = urls.map(toQueryObject);
 
   const filmsResponse = useQueries({ queries });
+  const isLoading = filmsResponse.some((film) => film.isLoading);
+  const error = filmsResponse.some((film) => film.error);
 
   const filmsData = filmsResponse.map((film) => (film.data as unknown as FilmModel));
   const filmNames = filmsData.map((film) => film?.title);
 
-  return filmNames;
+  return {
+    names: filmNames,
+    isLoading,
+    error
+  };
 };

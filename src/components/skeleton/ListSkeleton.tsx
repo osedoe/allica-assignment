@@ -7,13 +7,13 @@ export const ListSkeleton = () => {
     <Layout>
       <VStack align='stretch'>
         <Skeleton>
-          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='2' />
+          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='7' />
         </Skeleton>
         <Skeleton>
-          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='2' />
+          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='7' />
         </Skeleton>
         <Skeleton>
-          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='2' />
+          <SkeletonText mt='4' noOfLines={2} spacing='4' skeletonHeight='7' />
         </Skeleton>
       </VStack>
     </Layout>

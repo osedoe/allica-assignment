@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 
 import { getAllCharacters, type GetAllCharactersResponse } from '../api';
 import { Layout, ListItem, ListSkeleton } from '../components';
@@ -20,8 +21,9 @@ export const Home = () => {
         {charactersList?.results.map((character: CharacterModel, index: number) => {
           const characterPosition = index + 1;
           const route = `character-details/${characterPosition}`;
+          const id = uuid();
           return (
-            <Link key={character.name} to={route}>
+            <Link key={id} to={route}>
               <ListItem character={character} />
             </Link>);
         })}

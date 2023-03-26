@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckIcon, EditIcon } from '@chakra-ui/icons';
 import { Skeleton, InputGroup, InputLeftAddon, Input, InputRightElement, IconButton } from '@chakra-ui/react';
-import { log } from 'console';
 
 interface EditableInputProps {
   label: string
@@ -10,8 +9,8 @@ interface EditableInputProps {
 }
 
 export const EditableInput = ({ label, value, isLoading = false }: EditableInputProps) => {
-  const [isEditing, setIsEditing] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState(value);
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState(value);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -27,7 +26,7 @@ export const EditableInput = ({ label, value, isLoading = false }: EditableInput
     <Skeleton role="progressbar" aria-label="button-skeleton" isLoaded={!isLoading}>
       <InputGroup>
         <InputLeftAddon width='7rem' children={label} />
-        <Input value={inputValue} isDisabled={!isEditing} onBlur={handleInputChange} />
+        <Input value={inputValue} isDisabled={!isEditing} onChange={handleInputChange} onBlur={handleInputChange} />
         <InputRightElement children={<IconButton aria-label={ariaLabel} icon={inputIcon} onClick={handleEdit} />} />
       </InputGroup>
     </Skeleton>

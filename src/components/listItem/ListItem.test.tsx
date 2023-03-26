@@ -11,7 +11,7 @@ const CHARACTER: Partial<CharacterModel> = {
 };
 
 const renderComponent = async () => {
-  jest.spyOn(UseGetHomePlanetNameModule, 'useGetHomePlanetName').mockImplementation(() => 'Tatooine');
+  jest.spyOn(UseGetHomePlanetNameModule, 'useGetHomePlanetName').mockImplementation(() => ({ name: 'Tatooine', isLoading: false, error: null }));
 
   const getHeading = (name = CHARACTER.name) => screen.getByText(name ?? 'test name');
   const getGender = (gender = CHARACTER.gender) => screen.getByText(gender ?? 'male');

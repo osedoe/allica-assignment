@@ -39,6 +39,7 @@ The focus of this exercise is to gauge approach to solving the problem as much a
 - React Query
 - Jest
 - Cypress
+- Uuid
 
 ### Steps
 - [x] Hook to Swapi API
@@ -46,5 +47,15 @@ The focus of this exercise is to gauge approach to solving the problem as much a
 - [x] Character's list should contain the character's *name*, *gender* and *home planet*
 - [x] Click on one character should navigate to a detailed view with the following info: *name, hair colour, eye colour, gender, height, home planet* and *list of films*
 - [x] Amend height and gender
-- [ ] Check styling
-- [ ] Check testing
+- [x] Check styling
+- [x] Check testing
+
+### Next steps
+
+- Improve the styling by setting a theme for _Chakra_ or at least a colour palette with a new font.
+- Improve the UX by adding some hover or animations in the cards when we select a character, autofocus on the input when the user edits.
+- Abstract the three hooks used for the requests (character, homeworld and film) in the `CharacterDetails` page into one that sums up all the requests that are being done.
+- Following the atomic design methodology, I believe splitting the components more would be beneficial to improve readability - i.e. components like the `CardHeader` and `CardBody` with their content in both the `Home` and `CharacterDetails` pages could be better.
+- Add the API routes into a constant file or folder.
+- Add the definitions or texts into their own file or folder to make it easier to update in the future or in case we start taking into account `i18n`.
+- Improve the `ErrorMessage` component to convey more meaningful messages of the errors that might happen and add an `ErrorBoundary` for UX related errors.

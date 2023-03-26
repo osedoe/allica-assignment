@@ -1,5 +1,6 @@
 import React from 'react';
 import { Skeleton, Badge, VStack, Heading, Box, Center } from '@chakra-ui/react';
+import { v4 as uuid } from 'uuid';
 
 interface TagsInputProps {
   label: string
@@ -14,7 +15,10 @@ export const TagsInput = ({ label, values = [], isLoading = false }: TagsInputPr
         <Center>
           <VStack width="20rem">
             <Heading as='h3' size='md' textAlign='center' my={4}>{label}</Heading>
-            {values.map(value => <Badge key={value} colorScheme='purple'>{value}</Badge>)}
+            {values.map(value => {
+              const id = uuid();
+              return <Badge key={id} colorScheme='purple'>{value}</Badge>;
+            })}
           </VStack>
         </Center>
       </Box>
